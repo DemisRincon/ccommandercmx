@@ -9,7 +9,7 @@ export const P = styled.p`
 `;
 
 export const H1 = styled.h1`
-   max-width: 900px;
+  max-width: 900px;
   width: 90%;
   text-align: center;
 `;
@@ -17,13 +17,14 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
   max-width: 900px;
   width: 90%;
-   text-align: center;
+  text-align: center;
+  margin-top: 70px;
 `;
 
 export const H3 = styled.h3`
-    max-width: 900px;
+  max-width: 900px;
   width: 90%;
-   text-align: center;
+  text-align: center;
 `;
 
 export const MainContainer = styled.div`
@@ -42,13 +43,13 @@ export const SingleWrapper = styled.div`
   align-items: center;
   margin: 20px 0;
   width: 100%;
-    max-width: 900px;
+  max-width: 900px;
 `;
 
 export const WrapperGrid = styled.div`
   display: grid;
   margin-bottom: 20px;
-    max-width: 900px;
+  max-width: 900px;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 0 50px;
   grid-auto-rows: minmax(100px, auto);

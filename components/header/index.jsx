@@ -6,6 +6,7 @@ import IsMobile from "@/library/hooks/isMobile";
 import { Logo } from "@/library/images";
 import Image from "next/image";
 import useGetPaths from "@/library/hooks/useGetPaths";
+import { FaAlignJustify } from "react-icons/fa";y
 
 export const HeaderContainer = styled.div`
   height: 10vh;

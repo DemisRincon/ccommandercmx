@@ -24,12 +24,12 @@ const SocialMediaArticle = ({ paragraphs, type, url, title }) => {
       switch (type) {
         case "instagram":
           return <InstagramEmbed url={url} width={550} />;
-          case "x":
-            return <XEmbed url={url} width={550} />;
+        case "x":
+          return <XEmbed url={url} width={550} />;
       }
     };
     setMedia(selectMedia);
-  }, [type]);
+  }, [type, url]);
   return (
     <Container>
       <P>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { H3, WrapperGrid } from "../global";
+import { H3, WrapperGrid } from "@/components/Global";
 import { CardContainer, CardImage } from "../card";
 import Pharagraph from "../pharagraph";
 
@@ -18,7 +18,7 @@ const ImageGrid = ({ imagesWithContentCollection, paragraphs }) => {
       }
     );
     setImageCards(images);
-  }, []);
+  }, [imagesWithContentCollection.items]);
 
   return (
     <>

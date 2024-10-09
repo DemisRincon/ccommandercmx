@@ -7,7 +7,7 @@ const Pharagraph = ({ paragraphs }) => {
     let articleContent = [];
     paragraphs?.map((paragraph, index) => {
       let paragraphComponent = [];
-      paragraph.map((content, index) => {
+      paragraph?.map((content, index) => {
         switch (content.type) {
           case "letter":
             paragraphComponent.push(<span key={index}>{content.text}</span>);

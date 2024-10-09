@@ -6,7 +6,7 @@ import styled from "styled-components";
 import BannerWithContent from "../components/BannerWithContent";
 import Article from "../components/Article";
 import CardGrid from "../components/CardGrid";
-
+import SocialMediaArticle from "../components/SocialMediaArticle";
 export const MainContainer = styled.div`
   min-height: 90vh;
   width: 100%;
@@ -24,15 +24,27 @@ const Home = () => {
   useEffect(() => {
     if (!pagesProps.blocks) return;
     const blocks = pagesProps.blocks;
-    const page = blocks.map((block,index) => {
+    const page = blocks.map((block, index) => {
       switch (block.__typename) {
         case "Article":
-          return <Article key={`article-component-${index}`} {...block}/>
+          return <Article key={`article-component-${index}`} {...block} />;
         case "BannerWithContent":
-          return <BannerWithContent key={`bannerWithContent-component-${index}`} {...block}/>;
+          return (
+            <BannerWithContent
+              key={`bannerWithContent-component-${index}`}
+              {...block}
+            />
+          );
         case "CardGrid":
-          return <CardGrid key={`cardGrid-component-${index}`} {...block}/>;
-          default:
+          return <CardGrid key={`cardGrid-component-${index}`} {...block} />;
+        case "SocialMediaArticle":
+          return (
+            <SocialMediaArticle
+              key={`socialMediaArticle-component-${index}`}
+              {...block}
+            />
+          );
+        default:
           return null;
       }
     });

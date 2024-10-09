@@ -2,10 +2,10 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styled from "styled-components";
-import IsMobile from "../../library/hooks/isMobile";
-import { Logo } from "../../library/images";
+import IsMobile from "@/library/hooks/isMobile";
+import { Logo } from "@/library/images";
 import Image from "next/image";
-import useGetPaths from "../../library/hooks/useGetPaths";
+import useGetPaths from "@/library/hooks/useGetPaths";
 
 export const HeaderContainer = styled.div`
   height: 10vh;

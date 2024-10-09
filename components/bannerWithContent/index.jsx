@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { P } from "../global";
 import Pharagraph from "../pharagraph";
 export const BigLogo = styled.img`
   max-height: 50vh;

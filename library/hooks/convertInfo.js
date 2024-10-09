@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { BigLogo } from "../../components/Home";
-import Banner from "../../components/Banner";
-import { Button, H1, H2, H3, P } from "../../components/Global";
+import { BigLogo } from "@/components/Home";
+import Banner from "@/components/Banner";
+import { Button, H1, H2, H3, P } from "@/components/Global";
 
 const useConvertInfo = (info) => {
   const navigate = useNavigate();

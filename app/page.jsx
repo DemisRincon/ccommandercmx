@@ -1,4 +1,4 @@
-import BuildingPage from '../components/buldingPage/index'
+import BuildingPage from '@/components/buldingPage/index'
 
 
 export const metadata = {

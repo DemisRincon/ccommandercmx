@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from "react";
-import useGetPages from "../../library/hooks/useGetPages";
+import useGetPages from "@/library/hooks/useGetPages";
 import { usePathname } from "next/navigation";
 import styled from "styled-components";
 import BannerWithContent from "../BannerWithContent";

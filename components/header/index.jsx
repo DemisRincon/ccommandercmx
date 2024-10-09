@@ -42,7 +42,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useIsMobile();
   const paths = useGetPaths();
-  console.log(isMobile,"is mobile")
+  console.log(paths);
   if (!paths.length) return null;
   return (
     <HeaderContainer>

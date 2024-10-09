@@ -12,6 +12,7 @@ const useGetPaths = () => {
           return {
             params: {
               slug: item.slug,
+              name: item.name,
             },
           };
         })

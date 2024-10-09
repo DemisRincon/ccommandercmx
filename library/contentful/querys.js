@@ -2,7 +2,8 @@ export const slugQuery = `
   query {
     pageCollection{
       items{
-        slug
+        slug,
+        name
       }
     }
   }

@@ -26,23 +26,6 @@ export const H3 = styled.h3`
    text-align: center;
 `;
 
-export const Button = styled.button`
-  background-color: #066698;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: 0.3s;
-  font-size: 1.5rem;
-  max-width: 90%;
-  &:hover {
-    background-color: #222741;
-    cursor: pointer;
-  }
-`;
-
 export const MainContainer = styled.div`
   min-height: 100vh;
   width: 100%;

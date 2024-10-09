@@ -7,6 +7,9 @@ import BannerWithContent from "../components/BannerWithContent";
 import Article from "../components/Article";
 import CardGrid from "../components/CardGrid";
 import SocialMediaArticle from "../components/SocialMediaArticle";
+import ImageGrid from "../components/ImageGrid";
+import Butto from "../components/Button";
+
 export const MainContainer = styled.div`
   min-height: 90vh;
   width: 100%;
@@ -44,6 +47,10 @@ const Home = () => {
               {...block}
             />
           );
+        case "ImageGrid":
+          return <ImageGrid key={`imageGrid-component-${index}`} {...block} />;
+        case "Button":
+          return <Butto key={`button-component-${index}`} {...block} />;
         default:
           return null;
       }

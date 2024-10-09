@@ -5,7 +5,7 @@ const Pharagraph = ({ paragraphs }) => {
   const [article, setArticle] = useState(null);
   useEffect(() => {
     let articleContent = [];
-    paragraphs.map((paragraph, index) => {
+    paragraphs?.map((paragraph, index) => {
       let paragraphComponent = [];
       paragraph.map((content, index) => {
         switch (content.type) {
@@ -17,6 +17,13 @@ const Pharagraph = ({ paragraphs }) => {
               <a key={index} href={content.url} target="_blank">
                 {content.text}
               </a>
+            );
+            break;
+          case "bold":
+            paragraphComponent.push(
+              <b key={index} style={{ fontWeight: "bold" }}>
+                {content.text}
+              </b>
             );
             break;
           default:

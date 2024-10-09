@@ -44,6 +44,30 @@ export const findBySlugQuery = (slug) => `
                 paragraphs,
                 type
               }
+              ... on ImageGrid{
+                __typename,
+                title,
+                paragraphs,
+                imagesWithContentCollection(limit:20){
+                  ... on ImageGridImagesWithContentCollection{
+                    items{
+                      ...on ImageWithContent{
+                        title,
+                        paragraphs,
+                        image{
+                          url
+                        }
+                      }
+                    }
+                  }
+                } 	
+              }
+              ... on Button{
+                __typename,
+                text,
+                url
+                slug
+              }
             }
           },        
         }

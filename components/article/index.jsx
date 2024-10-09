@@ -1,11 +1,12 @@
 import React from "react";
-import { H2, P } from "../global";
+import { H2 } from "../global";
+import Pharagraph from "../pharagraph";
 
-const Article = ({ title, content }) => {
+const Article = ({ title, paragraphs }) => {
   return (
     <>
       <H2>{title}</H2>
-      <P>{content}</P>
+      <Pharagraph paragraphs={paragraphs} />
     </>
   );
 };

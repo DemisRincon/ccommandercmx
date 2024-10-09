@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import styled from "styled-components";
 import BannerWithContent from "../components/BannerWithContent";
 import Article from "../components/Article";
+import CardGrid from "../components/CardGrid";
+
 export const MainContainer = styled.div`
   min-height: 90vh;
   width: 100%;
@@ -28,8 +30,9 @@ const Home = () => {
           return <Article key={`article-component-${index}`} {...block}/>
         case "BannerWithContent":
           return <BannerWithContent key={`bannerWithContent-component-${index}`} {...block}/>;
-
-        default:
+        case "CardGrid":
+          return <CardGrid key={`cardGrid-component-${index}`} {...block}/>;
+          default:
           return null;
       }
     });

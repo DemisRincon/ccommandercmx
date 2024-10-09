@@ -77,6 +77,12 @@ export const WrapperGrid = styled.div`
   }
 `;
 
+export const Wrapper = styled(WrapperGrid)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const A = styled.a`
   color: #635c91;
   text-decoration: underline;

@@ -29,7 +29,13 @@ export const findBySlugQuery = (slug) => `
               ... on Article{
                 __typename,
                 title,
-                content
+                paragraphs
+              }
+                ... on CardGrid{
+                __typename,
+                title,
+                cardList,
+                paragraphs
               }
             }
           },        

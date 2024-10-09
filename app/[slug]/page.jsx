@@ -1,16 +1,14 @@
-import BuildingPage from '@/components/buldingPage/index'
-export const metadata = {
-  title: 'LKS',
-  icons: {
-    icon: '/favicon.ico', // /public path
-  },
+import BuildingPage from "@/components/buldingPage/index";
 
+export const metadata = {
+  title: "LKS",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 const Page = () => {
-  return (
-    <BuildingPage/>
-  )
-}
+  return <BuildingPage />;
+};
 
-export default Page
+export default Page;

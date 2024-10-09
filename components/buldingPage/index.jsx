@@ -4,12 +4,12 @@ import React, { useEffect, useState } from "react";
 import useGetPages from "@/library/hooks/useGetPages";
 import { usePathname } from "next/navigation";
 import styled from "styled-components";
-import BannerWithContent from "../BannerWithContent/index";
-import Article from "../Article/index";
-import CardGrid from "../CardGrid/index";
-import SocialMediaArticle from "../SocialMediaArticle/index";
-import ImageGrid from "../ImageGrid/index";
-import Butto from "../Button/index";
+import BannerWithContent from "../bannerWithContent/index";
+import Article from "../article/index";
+import CardGrid from "../cardGrid/index";
+import SocialMediaArticle from "../socialMediaArticle/index";
+import ImageGrid from "../imageGrid/index";
+import Butto from "../button/index";
 
 export const MainContainer = styled.div`
   min-height: 90vh;

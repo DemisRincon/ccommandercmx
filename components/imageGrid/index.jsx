@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { H3, WrapperGrid } from "@/components/Global";
+import { H3, WrapperGrid } from "@/components/global";
 import { CardContainer, CardImage } from "../card";
 import Pharagraph from "../pharagraph";
 

@@ -2,11 +2,11 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styled from "styled-components";
-import IsMobile from "@/library/hooks/isMobile";
 import { Logo } from "@/library/images";
 import Image from "next/image";
 import useGetPaths from "@/library/hooks/useGetPaths";
 import { FaAlignJustify } from "react-icons/fa";
+import useIsMobile from "@/library/hooks/isMobile";
 
 export const HeaderContainer = styled.div`
   height: 10vh;
@@ -40,8 +40,9 @@ export const MenuButtonContainer = styled(motion.div)`
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const isMobile = IsMobile();
+  const isMobile = useIsMobile();
   const paths = useGetPaths();
+  console.log(isMobile,"is mobile")
   if (!paths.length) return null;
   return (
     <HeaderContainer>

@@ -31,7 +31,6 @@ const MainLayout = styled.body`
 const Layout = ({ children }) => {
   return (
     <Html>
-      
       <StyledComponentsRegistry>
         <MainLayout>
           <Header />

@@ -10,7 +10,7 @@ export const Input = styled.button`
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 20px;
+  margin: 50px 0;
   transition: 0.3s;
   font-size: 1.5rem;
   max-width: 90%;

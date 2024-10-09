@@ -56,7 +56,6 @@ const Header = () => {
         <></>
       )}
       <AnimatePresence>
-        {isOpen && <Menu setIsOpen={setIsOpen} isOpen={isOpen} />}
       </AnimatePresence>
     </HeaderContainer>
   );

@@ -8,6 +8,7 @@ import AnimatedDiv from "../animatedDiv";
 export const BigLogo = styled.img`
   max-height: 50vh;
   max-width: 90%;
+  margin-bottom: 50px;
 `;
 
 
@@ -20,8 +21,8 @@ const BannerWithContent = ({ logoWithLegends, paragraphs, title }) => {
         transition={{ duration: 0.6 }}
       >
         <AnimatePresence>
-        <BigLogo src={logoWithLegends.url} alt="Big Logo" />
         <H1>{title}</H1>
+        <BigLogo src={logoWithLegends.url} alt="Big Logo" />
         <Pharagraph paragraphs={paragraphs} />
         </AnimatePresence>
       </AnimatedDiv>

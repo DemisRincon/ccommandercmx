@@ -34,7 +34,7 @@ const BuildingPage = () => {
   const pagesProps = useGetPages(pathName);
   useEffect(() => {
     if (!pagesProps.blocks) return;
-    
+
     const blocks = pagesProps.blocks;
     const page = blocks.map((block, index) => {
       switch (block.__typename) {
@@ -69,16 +69,19 @@ const BuildingPage = () => {
 
   if (!pagesProps) return;
 
-  return <MainContainer>
-    <AnimatedDiv
-      initial={{ opacity: 0, y: 5 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      <H1>{pagesProps.pageTitle}</H1>
-    </AnimatedDiv>
-    
-    {pageByBlock}</MainContainer>;
+  return (
+    <MainContainer>
+      <AnimatedDiv
+        initial={{ opacity: 0, y: 5 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        {pagesProps.pageTitle && <H1>{pagesProps.pageTitle}</H1>}
+      </AnimatedDiv>
+
+      {pageByBlock}
+    </MainContainer>
+  );
 };
 
 export default BuildingPage;

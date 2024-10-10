@@ -45,7 +45,7 @@ const Text = styled.div`
 `;
 
 const MenuItemDesktop = ({ item: { params }, closeMenu }) => {
-  console.log(params);
+
   return (
     <Item
       variants={variants}

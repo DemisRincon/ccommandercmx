@@ -39,10 +39,9 @@ const List = styled(motion.ul)`
 `;
 
 const MenuList = ({ closeMenu, paths }) => {
-  console.log(paths);
+
   const isMobile = useIsMobile();
 
-  console.log(isMobile);
   const itemsDestop = paths.map((item, index) => (
     <MenuItemDesktop closeMenu={closeMenu} item={item} key={`ide-${index}`} />
   ));

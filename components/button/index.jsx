@@ -14,9 +14,11 @@ export const Input = styled.button`
   transition: 0.3s;
   font-size: 1.2rem;
   max-width: 90%;
+  min-width: 300px;
   &:hover {
     background-color: #222741;
     cursor: pointer;
+    font-size: 1.3rem;
   }
 `;
 

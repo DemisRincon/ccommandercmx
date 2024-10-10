@@ -5,7 +5,7 @@ import Pharagraph from "../pharagraph";
 const Article = ({ title, paragraphs }) => {
   return (
     <>
-      <H1>{title}</H1>
+      <H2>{title}</H2>
       <Pharagraph paragraphs={paragraphs} />
     </>
   );

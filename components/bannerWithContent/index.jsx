@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Pharagraph from "../pharagraph";
+import { H1 } from "../global";
 
 export const BigLogo = styled.img`
   max-height: 50vh;
@@ -11,7 +12,7 @@ const BannerWithContent = ({ logoWithLegends, paragraphs, title }) => {
   return (
     <>
       <BigLogo src={logoWithLegends.url} alt="Big Logo" />
-      <h1>{title}</h1>
+      <H1>{title}</H1>
       <Pharagraph paragraphs={paragraphs} />
     </>
   );

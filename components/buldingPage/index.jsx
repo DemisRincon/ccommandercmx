@@ -68,7 +68,6 @@ const BuildingPage = () => {
 
   if (!pagesProps) return;
 
-  console.log(pagesProps)
   return <MainContainer>
     <H1>{pagesProps.pageTitle}</H1>
     

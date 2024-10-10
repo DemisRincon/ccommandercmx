@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import AnimatedDiv from "../animatedDiv";
 
 export const CardContainer = styled.div`
   width: 100%;
@@ -25,10 +26,16 @@ const Card = ({ searchName }) => {
   }, [searchName]);
 
   return (
+  <AnimatedDiv
+    initial={{ opacity: 0, y: 5 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+  >
     <CardContainer>
       <h3>{card.name}</h3>
       <CardImage src={card.image_uris?.normal} alt={card.name} />
     </CardContainer>
+  </AnimatedDiv>
   );
 };
 

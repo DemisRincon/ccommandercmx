@@ -11,6 +11,7 @@ import SocialMediaArticle from "../socialMediaArticle/index";
 import ImageGrid from "../imageGrid/index";
 import Butto from "../button/index";
 import { H1 } from "../global";
+import AnimatedDiv from "../animatedDiv";
 
 export const MainContainer = styled.div`
   min-height: 90vh;
@@ -69,7 +70,13 @@ const BuildingPage = () => {
   if (!pagesProps) return;
 
   return <MainContainer>
-    <H1>{pagesProps.pageTitle}</H1>
+    <AnimatedDiv
+      initial={{ opacity: 0, y: 5 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <H1>{pagesProps.pageTitle}</H1>
+    </AnimatedDiv>
     
     {pageByBlock}</MainContainer>;
 };

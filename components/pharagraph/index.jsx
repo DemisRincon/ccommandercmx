@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { P, H2, H3, H1, H4 } from "../global";
+import AnimatedDiv from "../animatedDiv";  // Asegúrate de importar el componente
 
 const Pharagraph = ({ paragraphs }) => {
   const [article, setArticle] = useState(null);
+
   useEffect(() => {
     let articleContent = [];
     paragraphs?.map((paragraph, index) => {
@@ -14,7 +16,7 @@ const Pharagraph = ({ paragraphs }) => {
             break;
           case "link":
             paragraphComponent.push(
-              <a key={index} href={content.url} target="_blank">
+              <a key={index} href={content.url} target="_blank" rel="noopener noreferrer">
                 {content.text}
               </a>
             );
@@ -39,6 +41,7 @@ const Pharagraph = ({ paragraphs }) => {
                 {content.text}
               </H1>
             );
+            break;
           case "h2":
             articleContent.push(
               <H2 key={index} style={{ fontSize: "2rem" }}>
@@ -61,14 +64,22 @@ const Pharagraph = ({ paragraphs }) => {
 
       if (paragraphComponent.length > 0)
         articleContent.push(
-          <P key={`paragraph-${index}`}>{paragraphComponent}</P>
+          <AnimatedDiv
+            key={`paragraph-${index}`}
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <P>{paragraphComponent}</P>
+          </AnimatedDiv>
         );
     });
     setArticle(articleContent);
   }, [paragraphs]);
-  const articles = article?.map((paragraph) => paragraph);
-  if (!articles || !paragraphs) return null;
-  return articles;
+
+  if (!article) return null;
+
+  return <>{article}</>;
 };
 
 export default Pharagraph;

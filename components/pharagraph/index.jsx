@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { P, H2, H3 } from "../global";
+import { P, H2, H3, H1 } from "../global";
 
 const Pharagraph = ({ paragraphs }) => {
   const [article, setArticle] = useState(null);
@@ -33,6 +33,12 @@ const Pharagraph = ({ paragraphs }) => {
               </i>
             );
             break;
+          case "h1":
+            articleContent.push(
+              <H1 key={index} style={{ fontSize: "3rem" }}>
+                {content.text}
+              </H1>
+            );
           case "h2":
             articleContent.push(
               <H2 key={index} style={{ fontSize: "2rem" }}>
@@ -53,10 +59,10 @@ const Pharagraph = ({ paragraphs }) => {
         }
       });
       console.log(paragraphComponent);
-        if (paragraphComponent.length > 0)
-      articleContent.push(
-        <P key={`paragraph-${index}`}>{paragraphComponent}</P>
-      );
+      if (paragraphComponent.length > 0)
+        articleContent.push(
+          <P key={`paragraph-${index}`}>{paragraphComponent}</P>
+        );
     });
     setArticle(articleContent);
   }, [paragraphs]);

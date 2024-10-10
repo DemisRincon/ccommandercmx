@@ -34,24 +34,26 @@ const Pharagraph = ({ paragraphs }) => {
             );
             break;
           case "h2":
-            paragraphComponent.push(
+            articleContent.push(
               <H2 key={index} style={{ fontSize: "2rem" }}>
                 {content.text}
               </H2>
             );
             break;
           case "h3":
-            paragraphComponent.push(
+            articleContent.push(
               <H3 key={index} style={{ fontSize: "1.5rem" }}>
                 {content.text}
               </H3>
             );
+            break;
           default:
             paragraphComponent.push(<span key={index}>{content.text}</span>);
             break;
         }
       });
-
+      console.log(paragraphComponent);
+        if (paragraphComponent.length > 0)
       articleContent.push(
         <P key={`paragraph-${index}`}>{paragraphComponent}</P>
       );

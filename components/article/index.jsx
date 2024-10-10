@@ -1,6 +1,6 @@
 import React from "react";
-import { H1 } from "../global";
 import Pharagraph from "../pharagraph";
+import { H2 } from "../global";
 
 const Article = ({ title, paragraphs }) => {
   return (

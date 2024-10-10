@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useEffect, useState } from "react";
 import useGetPages from "@/library/hooks/useGetPages";
@@ -16,12 +16,12 @@ export const MainContainer = styled.div`
   max-width: 100vw;
   width: 100%;
   display: flex;
-   padding-top: 15vh;
+  padding-top: 15vh;
   flex-direction: column;
   justify-content: start;
   align-items: center;
   flex-direction: column;
-   @media (min-width: 768px) {
+  @media (min-width: 768px) {
     padding-top: 10vh;
   }
 `;

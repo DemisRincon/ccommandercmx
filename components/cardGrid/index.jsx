@@ -8,19 +8,18 @@ const CardGrid = ({ cardList, paragraphs }) => {
     <Card key={cardName + index} searchName={cardName} />
   ));
 
-  let cardsComponents = null
+  let cardsComponents = null;
   if (!cards) return;
-  if (cards.length === 1){
-
-    cardsComponents= <Wrapper key="cardnameslist">{cards}</Wrapper>;
+  if (cards.length === 1) {
+    cardsComponents = <Wrapper key="cardnameslist">{cards}</Wrapper>;
   } else {
     cardsComponents = <WrapperGrid key="cardnameslist">{cards}</WrapperGrid>;
   }
 
   return (
     <>
-     {cardsComponents}
-    {paragraphs && <Pharagraph paragraphs={paragraphs} />}
+      {cardsComponents}
+      {paragraphs && <Pharagraph paragraphs={paragraphs} />}
     </>
   );
 };

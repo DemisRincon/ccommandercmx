@@ -1,16 +1,14 @@
-import BuildingPage from '@/components/buldingPage/index'
+import BuildingPage from "@/components/buldingPage/index";
 
 export const metadata = {
-  title: 'Competitive Commander Community Mx',
+  title: "Competitive Commander Community Mx",
   icons: {
-    icon: '/icon.png',
+    icon: "/icon.png",
   },
 };
 
 const Page = () => {
-  return (
-    <BuildingPage/>
-  )
-}
+  return <BuildingPage />;
+};
 
-export default Page
+export default Page;

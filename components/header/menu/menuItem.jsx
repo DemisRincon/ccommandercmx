@@ -51,13 +51,13 @@ const Text = styled.div`
     height: 100%;
   }
 `;
+
 const LinkStyled = styled(Link)`
-width: 100%;
-text-decoration: none;
+  width: 100%;
+  text-decoration: none;
 `;
 
 const MenuItem = ({ item: { params }, closeMenu }) => {
-
   return (
     <Item
       variants={variants}
@@ -65,7 +65,7 @@ const MenuItem = ({ item: { params }, closeMenu }) => {
       whileTap={{ scale: 0.95 }}
       onClick={closeMenu}
     >
-        <LinkStyled href={params.slug} >
+      <LinkStyled href={params.slug}>
         <Text>
           <H3>{params.name}</H3>
         </Text>

@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
-import { HeaderContainer, IconContainer, MenuButtonContainer } from "../index";
-
-import Logo from "@/library/images/logo.png";
 import useIsMobile from "@/library/hooks/isMobile";
 import MenuList from "./menuList";
+
 const Container = styled(motion.nav)`
   position: absolute;
   top: 15vh;
@@ -23,7 +21,7 @@ const Container = styled(motion.nav)`
   max-width: 100vw;
 `;
 
-const Menu = ({ paths, setIsOpen, isOpen }) => {
+const Menu = ({ paths, setIsOpen }) => {
   const closeMenu = () => {
     setIsOpen(false);
   };
@@ -38,7 +36,9 @@ const Menu = ({ paths, setIsOpen, isOpen }) => {
       exit={{ opacity: 0, transition: { ease: "easeOut", duration: 0.5 } }}
     >
       <AnimatePresence>
-      {isMobile ? <MenuList paths={paths} closeMenu={closeMenu} /> : undefined}
+        {isMobile ? (
+          <MenuList paths={paths} closeMenu={closeMenu} />
+        ) : undefined}
       </AnimatePresence>
     </Container>
   );

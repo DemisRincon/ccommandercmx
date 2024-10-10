@@ -1,10 +1,9 @@
-'use client'
+"use client";
 
 import React from "react";
 import styled from "styled-components";
 import Header from "@/components/header";
 import StyledComponentsRegistry from "./registry";
-
 
 const Html = styled.html`
   font-family: "Roboto", sans-serif;
@@ -26,7 +25,6 @@ const MainLayout = styled.body`
   min-height: 100vh;
   background-color: #f5f5f5;
 `;
-
 
 const Layout = ({ children }) => {
   return (

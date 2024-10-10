@@ -3,7 +3,7 @@ import BuildingPage from "@/components/buldingPage/index";
 export const metadata = {
   title: "LKS",
   icons: {
-    icon: '/icon.png',
+    icon: "/icon.png",
   },
 };
 

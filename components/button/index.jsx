@@ -1,7 +1,7 @@
-'use client'
-import { useRouter } from 'next/navigation';
-import React from 'react'
-import styled from 'styled-components';
+"use client";
+import { useRouter } from "next/navigation";
+import React from "react";
+import styled from "styled-components";
 
 export const Input = styled.button`
   background-color: #066698;
@@ -20,11 +20,9 @@ export const Input = styled.button`
   }
 `;
 
-const Button = ({text,url}) => {
-    const router = useRouter()
-  return (
-    <Input onClick={() => router.push(url)} >{text}</Input>
-  )
-}
+const Button = ({ text, url }) => {
+  const router = useRouter();
+  return <Input onClick={() => router.push(url)}>{text}</Input>;
+};
 
-export default Button
+export default Button;

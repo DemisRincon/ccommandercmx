@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
-import { HeaderContainer, IconContainer, MenuButtonContainer } from "../header";
+import { HeaderContainer, IconContainer, MenuButtonContainer } from "../index";
 import { FaXmark } from "react-icons/fa6";
 
 const Container = styled(motion.nav)`

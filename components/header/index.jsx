@@ -7,7 +7,9 @@ import Image from "next/image";
 import useGetPaths from "@/library/hooks/useGetPaths";
 import { FaAlignJustify } from "react-icons/fa";
 import useIsMobile from "@/library/hooks/isMobile";
-import Menu from "../menu";
+import Menu from "./menu";
+import MenuList from "./menu/menuList";
+
 export const HeaderContainer = styled.div`
   height: 10vh;
   width: 100%;
@@ -55,9 +57,12 @@ const Header = () => {
           <FaAlignJustify size={30} />
         </MenuButtonContainer>
       ) : (
-        isOpen && <Menu paths={paths} setIsOpen={setIsOpen} isOpen={isOpen} />
+        <MenuList paths={paths}/>
       )}
-      <AnimatePresence></AnimatePresence>
+      <AnimatePresence>
+{  isOpen && <Menu paths={paths} setIsOpen={setIsOpen} isOpen={isOpen} />}
+
+      </AnimatePresence>
     </HeaderContainer>
   );
 };

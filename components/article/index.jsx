@@ -5,7 +5,7 @@ import { H2 } from "../global";
 const Article = ({ title, paragraphs }) => {
   return (
     <>
-      <H2>{title}</H2>
+      {title && <H2>{title}</H2>}
       <Pharagraph paragraphs={paragraphs} />
     </>
   );

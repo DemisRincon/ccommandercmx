@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../card";
 import { Wrapper, WrapperGrid } from "../global";
 import Pharagraph from "../pharagraph";
+import AnimatedDiv from "../animatedDiv";
 
 const CardGrid = ({ cardList, paragraphs }) => {
   const cards = cardList.map((cardName, index) => (
@@ -18,8 +19,14 @@ const CardGrid = ({ cardList, paragraphs }) => {
 
   return (
     <>
-      {cardsComponents}
-      {paragraphs && <Pharagraph paragraphs={paragraphs} />}
+      <AnimatedDiv
+        initial={{ opacity: 0, y: 5 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        {cardsComponents}
+        {paragraphs && <Pharagraph paragraphs={paragraphs} />}
+      </AnimatedDiv>
     </>
   );
 };

@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 import styled from "styled-components";
+import AnimatedDiv from "../animatedDiv";
 
 export const Input = styled.button`
   background-color: #066698;
@@ -24,7 +25,16 @@ export const Input = styled.button`
 
 const Button = ({ text, url }) => {
   const router = useRouter();
-  return <Input onClick={() => router.push(url)}>{text}</Input>;
+  return (
+    <AnimatedDiv
+      initial={{ opacity: 0, y: 5 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    > 
+      <Input onClick={() => router.push(url)}>{text}</Input>;
+    </AnimatedDiv>
+  )
+
 };
 
 export default Button;

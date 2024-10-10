@@ -2,7 +2,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import Link from "next/link";
-import { H3 } from "@/components/global";
+import { H4 } from "@/components/global";
 
 const variants = {
   open: {
@@ -67,7 +67,7 @@ const MenuItem = ({ item: { params }, closeMenu }) => {
     >
       <LinkStyled href={params.slug}>
         <Text>
-          <H3>{params.name}</H3>
+          <H4>{params.name}</H4>
         </Text>
       </LinkStyled>
     </Item>

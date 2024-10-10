@@ -40,6 +40,17 @@ export const H3 = styled.h3`
     font-weight: bold;
     unicode-bidi: isolate;
 `;
+export const H4 = styled.h4`
+    display: block;
+    font-size: .8em !important;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+`;
+
 
 
 export const MainContainer = styled.div`

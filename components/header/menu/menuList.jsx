@@ -59,5 +59,4 @@ const MenuList = ({ closeMenu, paths }) => {
   );
 };
 
-const itemIds = [0, 1, 2, 3];
 export default MenuList;

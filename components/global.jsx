@@ -27,6 +27,12 @@ export const H3 = styled.h3`
   text-align: center;
 `;
 
+export const H4 = styled.h4`
+  max-width: 900px;
+  width: 90%;
+  text-align: center;
+`;
+
 export const MainContainer = styled.div`
   min-height: 100vh;
   width: 100%;

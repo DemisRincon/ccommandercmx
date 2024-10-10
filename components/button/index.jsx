@@ -12,7 +12,7 @@ export const Input = styled.button`
   cursor: pointer;
   margin: 50px 0;
   transition: 0.3s;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   max-width: 90%;
   &:hover {
     background-color: #222741;

@@ -42,7 +42,7 @@ export const H3 = styled.h3`
 `;
 export const H4 = styled.h4`
     display: block;
-    font-size: .8em !important;
+    font-size: 1em !important;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;

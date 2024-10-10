@@ -22,14 +22,14 @@ const variants = {
 };
 
 const LinkStyled = styled(Link)`
-text-decoration: none;
+  text-decoration: none;
 `;
 
 const Item = styled(motion.li)`
   list-style: none;
   display: flex;
   align-items: center;
-padding: 0 10px;
+  padding: 0 10px;
   border-radius: none;
   outline: none;
 `;
@@ -51,8 +51,9 @@ const MenuItemDesktop = ({ item: { params }, closeMenu }) => {
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
+      onClick={closeMenu}
     >
-      <LinkStyled href={params.slug} >
+      <LinkStyled href={params.slug}>
         <Text>
           <H3>{params.name}</H3>
         </Text>

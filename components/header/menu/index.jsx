@@ -2,11 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
 import { HeaderContainer, IconContainer, MenuButtonContainer } from "../index";
-import { FaXmark } from "react-icons/fa6";
 
+import Logo from "@/library/images/logo.png";
+import useIsMobile from "@/library/hooks/isMobile";
+import MenuList from "./menuList";
 const Container = styled(motion.nav)`
   position: absolute;
-  top: 0;
+  top: 15vh;
   left: 0;
   right: 0;
   bottom: 0;
@@ -16,12 +18,16 @@ const Container = styled(motion.nav)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: start;
   z-index: 1;
+  max-width: 100vw;
 `;
 
 const Menu = ({ paths, setIsOpen, isOpen }) => {
-  console.log(paths);
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+  const isMobile = useIsMobile();
   return (
     <Container
       animate={{
@@ -31,13 +37,8 @@ const Menu = ({ paths, setIsOpen, isOpen }) => {
       initial={{ opacity: 0 }}
       exit={{ opacity: 0, transition: { ease: "easeOut", duration: 0.5 } }}
     >
-      <HeaderContainer>
-        <IconContainer src={Logo} />
-        <MenuButtonContainer>
-          <FaXmark size={30} />
-        </MenuButtonContainer>
-      </HeaderContainer>
       <AnimatePresence>
+      {isMobile ? <MenuList paths={paths} closeMenu={closeMenu} /> : undefined}
       </AnimatePresence>
     </Container>
   );

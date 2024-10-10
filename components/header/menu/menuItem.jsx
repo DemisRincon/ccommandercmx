@@ -2,6 +2,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import Link from "next/link";
+import { H3 } from "@/components/global";
 
 const variants = {
   open: {
@@ -20,18 +21,15 @@ const variants = {
   },
 };
 
-const colors = ["#066698", "#066698", "#066698", "#066698"];
-const LinkNames = ["Inicio" , "LKS (Alternative cEDH)","FAQ", "Contacto"];
-const LinkUrls = ["/"  ,"/lks", "/faq" ,"/contact"];
 const Item = styled(motion.li)`
   list-style: none;
   height: 3rem;
   display: flex;
   align-items: center;
   width: 70%;
-  margin-bottom: 30px;
+  margin: 30px 0;
   border-radius: 10px;
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     width: 90%;
     margin-bottom: 0;
     height: 2.5rem;
@@ -47,29 +45,31 @@ const Text = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #f0f0f0;
-  @media (min-width: 1024px) {
+  color: #066698;
+  @media (min-width: 768px) {
     max-width: 10rem;
     height: 100%;
   }
 `;
+const LinkStyled = styled(Link)`
+width: 100%;
+text-decoration: none;
+`;
 
-const MenuItem = ({ i, closeMenu }) => {
-  const style = { border: `2px solid ${colors[i]}` };
+const MenuItem = ({ item: { params }, closeMenu }) => {
+
   return (
     <Item
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
+      onClick={closeMenu}
     >
-      <Link
-        style={{ width: "100%", height: "100%", display: "flex" }}
-        href={LinkUrls[i]}
-        onClick={closeMenu}
-      >
-        <Text className="text-placeholder" style={style}>
-          <h4>{LinkNames[i]}</h4>
+        <LinkStyled href={params.slug} >
+        <Text>
+          <H3>{params.name}</H3>
         </Text>
-      </Link>
+      </LinkStyled>
     </Item>
   );
 };

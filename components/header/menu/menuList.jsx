@@ -25,11 +25,12 @@ const List = styled(motion.ul)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 15vh;
+  margin-top:0;
   margin-bottom: 0;
   padding: 0;
   padding-right: 50px;
-  @media (min-width: 1024px) {
+  max-width: 100vw;
+  @media (min-width: 768px) {
     flex-direction: row;
     justify-content: end;
     margin-top: 0;
@@ -41,13 +42,13 @@ const MenuList = ({ closeMenu, paths }) => {
   console.log(paths);
   const isMobile = useIsMobile();
 
-
+console.log(isMobile);
   const itemsDestop = paths.map((item, index) => (
     <MenuItemDesktop closeMenu={closeMenu} item={item} key={`ide-${index}`} />
   ));
   const itemsMobile = paths.map((item , index) => (
-    <>hello</>
-  //  <MenuItem closeMenu={closeMenu} item={item} key={`ide-${index}`} />
+  
+  <MenuItem closeMenu={closeMenu} item={item} key={`ide-${index}`} />
   ));
   return (
     <List

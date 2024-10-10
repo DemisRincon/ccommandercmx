@@ -9,15 +9,21 @@ import { FaAlignJustify } from "react-icons/fa";
 import useIsMobile from "@/library/hooks/isMobile";
 import Menu from "./menu";
 import MenuList from "./menu/menuList";
+import { FaXmark } from "react-icons/fa6";
 
 export const HeaderContainer = styled.div`
-  height: 10vh;
+  height: 15vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #066698;
   z-index: 100;
+  position: fixed;
+  max-width: 100vw;
+  @media (min-width: 768px) {
+    height: 10vh;
+  }
 `;
 
 export const IconContainer = styled(Image)`
@@ -54,14 +60,13 @@ const Header = () => {
       </Link>
       {isMobile ? (
         <MenuButtonContainer onClick={() => setIsOpen(!isOpen)}>
-          <FaAlignJustify size={30} />
+          {isOpen ? <FaXmark size={30} /> : <FaAlignJustify size={30} />}
         </MenuButtonContainer>
       ) : (
-        <MenuList paths={paths}/>
+        <MenuList paths={paths} />
       )}
       <AnimatePresence>
-{  isOpen && <Menu paths={paths} setIsOpen={setIsOpen} isOpen={isOpen} />}
-
+        {isOpen && <Menu paths={paths} setIsOpen={setIsOpen} isOpen={isOpen} />}
       </AnimatePresence>
     </HeaderContainer>
   );

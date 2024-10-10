@@ -13,12 +13,17 @@ import Butto from "../button/index";
 
 export const MainContainer = styled.div`
   min-height: 90vh;
+  max-width: 100vw;
   width: 100%;
   display: flex;
+   padding-top: 15vh;
   flex-direction: column;
   justify-content: start;
   align-items: center;
   flex-direction: column;
+   @media (min-width: 768px) {
+    padding-top: 10vh;
+  }
 `;
 
 const BuildingPage = () => {

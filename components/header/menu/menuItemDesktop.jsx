@@ -21,13 +21,15 @@ const variants = {
   },
 };
 
-const LinkNames = ["Inicio", "LKS (Alternative cEDH)", "FAQ", "Contacto"];
-const LinkUrls = ["/", "/lks", "/faq", "/contact"];
+const LinkStyled = styled(Link)`
+text-decoration: none;
+`;
+
 const Item = styled(motion.li)`
   list-style: none;
   display: flex;
   align-items: center;
-  width: 50%;
+padding: 0 10px;
   border-radius: none;
   outline: none;
 `;
@@ -50,21 +52,11 @@ const MenuItemDesktop = ({ item: { params }, closeMenu }) => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      <Link href={params.slug}>
+      <LinkStyled href={params.slug} >
         <Text>
           <H3>{params.name}</H3>
         </Text>
-      </Link>
-      {/* <Link
-        style={{ width: "100%", height: "100%" , display: 'flex'}}
-        href={LinkUrls[i]}
-        onClick={closeMenu}
-      >
-      
-        <Text className="text-placeholder" >
-          <h4>{LinkNames[i]}</h4>
-        </Text>
-      </Link> */}
+      </LinkStyled>
     </Item>
   );
 };

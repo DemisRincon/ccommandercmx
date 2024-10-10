@@ -7,7 +7,7 @@ import Image from "next/image";
 import useGetPaths from "@/library/hooks/useGetPaths";
 import { FaAlignJustify } from "react-icons/fa";
 import useIsMobile from "@/library/hooks/isMobile";
-
+import Menu from "../menu";
 export const HeaderContainer = styled.div`
   height: 10vh;
   width: 100%;
@@ -42,8 +42,9 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useIsMobile();
   const paths = useGetPaths();
-  console.log(paths);
+
   if (!paths.length) return null;
+
   return (
     <HeaderContainer>
       <Link href="/">
@@ -54,10 +55,9 @@ const Header = () => {
           <FaAlignJustify size={30} />
         </MenuButtonContainer>
       ) : (
-        <></>
+        isOpen && <Menu paths={paths} setIsOpen={setIsOpen} isOpen={isOpen} />
       )}
-      <AnimatePresence>
-      </AnimatePresence>
+      <AnimatePresence></AnimatePresence>
     </HeaderContainer>
   );
 };

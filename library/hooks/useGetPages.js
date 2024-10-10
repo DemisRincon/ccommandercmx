@@ -12,9 +12,11 @@ const useGetPages = (slug) => {
       } = await fetchTool(findBySlugQuery(slug));
 
       const blocks = pages[0].blocksCollection.items;
+      console.log(pages[0]);
       setPage({
         slug,
         title: pages[0].title,
+        pageTitle: pages[0].pageTitle,
         generalPage: pages[0],
         blocks,
       });

@@ -53,19 +53,12 @@ const Pharagraph = ({ paragraphs }) => {
               </H3>
             );
             break;
-            case "h4":
-              articleContent.push(
-                <H4 key={index} style={{ fontSize: "1.5rem" }}>
-                  {content.text}
-                </H4>
-              );
-              break;
           default:
             paragraphComponent.push(<span key={index}>{content.text}</span>);
             break;
         }
       });
-      console.log(paragraphComponent);
+
       if (paragraphComponent.length > 0)
         articleContent.push(
           <P key={`paragraph-${index}`}>{paragraphComponent}</P>

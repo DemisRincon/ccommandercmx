@@ -10,6 +10,7 @@ import CardGrid from "../cardGrid/index";
 import SocialMediaArticle from "../socialMediaArticle/index";
 import ImageGrid from "../imageGrid/index";
 import Butto from "../button/index";
+import { H1 } from "../global";
 
 export const MainContainer = styled.div`
   min-height: 90vh;
@@ -32,6 +33,7 @@ const BuildingPage = () => {
   const pagesProps = useGetPages(pathName);
   useEffect(() => {
     if (!pagesProps.blocks) return;
+    
     const blocks = pagesProps.blocks;
     const page = blocks.map((block, index) => {
       switch (block.__typename) {
@@ -65,7 +67,12 @@ const BuildingPage = () => {
   }, [pagesProps]);
 
   if (!pagesProps) return;
-  return <MainContainer>{pageByBlock}</MainContainer>;
+
+  console.log(pagesProps)
+  return <MainContainer>
+    <H1>{pagesProps.pageTitle}</H1>
+    
+    {pageByBlock}</MainContainer>;
 };
 
 export default BuildingPage;

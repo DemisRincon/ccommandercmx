@@ -9,29 +9,38 @@ export const P = styled.p`
 `;
 
 export const H1 = styled.h1`
-  max-width: 900px;
-  width: 90%;
-  text-align: center;
+   display: block;
+    font-size: 2em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
 `;
 
 export const H2 = styled.h2`
-  max-width: 900px;
-  width: 90%;
-  text-align: center;
-  margin-top: 70px;
+    display: block;
+    font-size: 1.5em !important;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
 `;
 
 export const H3 = styled.h3`
-  max-width: 900px;
-  width: 90%;
-  text-align: center;
+    display: block;
+    font-size: 1.17em !important;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
 `;
 
-export const H4 = styled.h4`
-  max-width: 900px;
-  width: 90%;
-  text-align: center;
-`;
 
 export const MainContainer = styled.div`
   min-height: 100vh;

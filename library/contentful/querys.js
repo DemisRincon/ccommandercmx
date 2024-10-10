@@ -15,6 +15,7 @@ export const findBySlugQuery = (slug) => `
       items{
         name,
         title,
+        pageTitle,
         slug
         blocksCollection{
           ... on PageBlocksCollection{

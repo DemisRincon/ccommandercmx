@@ -38,7 +38,6 @@ const Menu = ({ paths, setIsOpen, isOpen }) => {
         </MenuButtonContainer>
       </HeaderContainer>
       <AnimatePresence>
-        {isOpen && <MenuList paths={paths} setIsOpen={setIsOpen} />}
       </AnimatePresence>
     </Container>
   );

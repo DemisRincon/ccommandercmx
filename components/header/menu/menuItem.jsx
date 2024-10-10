@@ -27,7 +27,7 @@ const Item = styled(motion.li)`
   display: flex;
   align-items: center;
   width: 70%;
-  margin: 30px 0;
+  margin: 40px 0;
   border-radius: 10px;
   @media (min-width: 768px) {
     width: 90%;

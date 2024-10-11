@@ -1,6 +1,6 @@
 export const slugQuery = `
   query {
-    pageCollection(order:slug_ASC){
+    pageCollection(order:pageOrder_ASC){
       items{
         slug,
         name

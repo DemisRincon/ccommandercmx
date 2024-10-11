@@ -43,6 +43,7 @@ const MenuList = ({ closeMenu, paths }) => {
   const isMobile = useIsMobile();
 
   const itemsDestop = paths.map((item, index) => (
+    
     <MenuItemDesktop closeMenu={closeMenu} item={item} key={`ide-${index}`} />
   ));
   const itemsMobile = paths.map((item, index) => (

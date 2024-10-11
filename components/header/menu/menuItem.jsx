@@ -58,6 +58,7 @@ const LinkStyled = styled(Link)`
 `;
 
 const MenuItem = ({ item: { params }, closeMenu }) => {
+  if (!params.slug) return null;
   return (
     <Item
       variants={variants}

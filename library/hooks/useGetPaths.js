@@ -13,6 +13,7 @@ const useGetPaths = () => {
             params: {
               slug: item.slug,
               name: item.name,
+              shouldBeOnMenu: item.shouldBeOnMenu,
             },
           };
         })

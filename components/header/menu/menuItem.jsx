@@ -58,7 +58,7 @@ const LinkStyled = styled(Link)`
 `;
 
 const MenuItem = ({ item: { params }, closeMenu }) => {
-  if (!params.slug) return null;
+  if (!params.shouldBeOnMenu) return null;
   return (
     <Item
       variants={variants}

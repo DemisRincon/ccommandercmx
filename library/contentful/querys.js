@@ -3,6 +3,7 @@ export const slugQuery = `
     pageCollection(order:pageOrder_ASC){
       items{
         slug,
+        shouldBeOnMenu,
         name
       }
     }

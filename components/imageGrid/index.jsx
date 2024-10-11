@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { H3, WrapperGrid } from "@/components/global";
 import { CardContainer, CardImage } from "../card";
 import Pharagraph from "../pharagraph";
-import AnimatedDiv from "../animatedDiv";
 
 const ImageGrid = ({ imagesWithContentCollection, paragraphs }) => {
   const [imageCards, setImageCards] = useState(null);
@@ -23,14 +22,8 @@ const ImageGrid = ({ imagesWithContentCollection, paragraphs }) => {
 
   return (
     <>
-      <AnimatedDiv
-        initial={{ opacity: 0, y: 5 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <WrapperGrid>{imageCards}</WrapperGrid>;
-        <Pharagraph paragraphs={paragraphs} />
-      </AnimatedDiv>
+      <WrapperGrid>{imageCards}</WrapperGrid>;
+      <Pharagraph paragraphs={paragraphs} />
     </>
   );
 };

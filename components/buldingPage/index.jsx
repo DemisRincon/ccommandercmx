@@ -34,37 +34,62 @@ const BuildingPage = () => {
   const pagesProps = useGetPages(pathName);
   useEffect(() => {
     if (!pagesProps.blocks) return;
-
+    let pageComponents = [];
     const blocks = pagesProps.blocks;
-    const page = blocks.map((block, index) => {
+    blocks.map((block, index) => {
+      let selectedComponent = null;
       switch (block.__typename) {
         case "Article":
-          return <Article key={`article-component-${index}`} {...block} />;
+          selectedComponent = (
+            <Article key={`article-component-${index}`} {...block} />
+          );
+          break;
         case "BannerWithContent":
-          return (
+          selectedComponent = (
             <BannerWithContent
               key={`bannerWithContent-component-${index}`}
               {...block}
             />
           );
+          break;
         case "CardGrid":
-          return <CardGrid key={`cardGrid-component-${index}`} {...block} />;
+          selectedComponent = (
+            <CardGrid key={`cardGrid-component-${index}`} {...block} />
+          );
+          break;
         case "SocialMediaArticle":
-          return (
+          selectedComponent = (
             <SocialMediaArticle
               key={`socialMediaArticle-component-${index}`}
               {...block}
             />
           );
+          break;
         case "ImageGrid":
-          return <ImageGrid key={`imageGrid-component-${index}`} {...block} />;
+          selectedComponent = (
+            <ImageGrid key={`imageGrid-component-${index}`} {...block} />
+          );
+          break;
         case "Button":
-          return <Butto key={`button-component-${index}`} {...block} />;
+          selectedComponent = (
+            <Butto key={`button-component-${index}`} {...block} />
+          );
+          break;
         default:
           return null;
       }
+      pageComponents.push(
+        <AnimatedDiv
+          initial={{ opacity: 0, y: 5 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          key={`animatedDiv-${index}`}
+        >
+          {selectedComponent}
+        </AnimatedDiv>
+      );
     });
-    setPageByBlock(page);
+    setPageByBlock(pageComponents);
   }, [pagesProps]);
 
   if (!pagesProps) return;

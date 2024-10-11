@@ -3,7 +3,6 @@ import { P } from "../global";
 import styled from "styled-components";
 import Pharagraph from "../pharagraph";
 import { InstagramEmbed, XEmbed } from "react-social-media-embed";
-import AnimatedDiv from "../animatedDiv";
 
 const Container = styled.div`
   display: flex;
@@ -33,17 +32,11 @@ const SocialMediaArticle = ({ paragraphs, type, url, title }) => {
   }, [type, url]);
   return (
     <Container>
-      <AnimatedDiv
-        initial={{ opacity: 0, y: 5 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >    
-        <P>
-          <b>{title}</b>
-        </P>
-        <Pharagraph paragraphs={paragraphs} />
-        {media}
-      </AnimatedDiv>
+      <P>
+        <b>{title}</b>
+      </P>
+      <Pharagraph paragraphs={paragraphs} />
+      {media}
     </Container>
   );
 };

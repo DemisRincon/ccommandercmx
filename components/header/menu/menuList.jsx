@@ -44,10 +44,10 @@ const MenuList = ({ closeMenu, paths }) => {
 
   const itemsDestop = paths.map((item, index) => (
     
-    <MenuItemDesktop closeMenu={closeMenu} item={item} key={`ide-${index}`} />
+    <MenuItemDesktop closeMenu={closeMenu} item={item} key={`menu-item-desktop-${index}`} />
   ));
   const itemsMobile = paths.map((item, index) => (
-    <MenuItem closeMenu={closeMenu} item={item} key={`ide-${index}`} />
+    <MenuItem closeMenu={closeMenu} item={item} key={`menu-item-${index}`} />
   ));
   return (
     <List

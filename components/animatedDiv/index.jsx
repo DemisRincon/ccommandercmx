@@ -10,7 +10,13 @@ const StyledMotionDiv = styled(motion.div)`
   width: 100%;
 `;
 
-const AnimatedDiv = ({ children, initial, animate, transition, threshold = 0.2 }) => {
+const AnimatedDiv = ({
+  children,
+  initial,
+  animate,
+  transition,
+  threshold = 0.2,
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { threshold });
 

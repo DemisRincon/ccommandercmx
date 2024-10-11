@@ -21,6 +21,7 @@ export const HeaderContainer = styled.div`
   z-index: 100;
   position: fixed;
   max-width: 100vw;
+  box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.5); 
   @media (min-width: 768px) {
     height: 10vh;
   }

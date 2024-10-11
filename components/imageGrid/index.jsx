@@ -26,7 +26,7 @@ const ImageGrid = ({ imagesWithContentCollection, paragraphs }) => {
       <AnimatedDiv
         initial={{ opacity: 0, y: 5 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.8 }}
       >
         <WrapperGrid>{imageCards}</WrapperGrid>;
         <Pharagraph paragraphs={paragraphs} />

@@ -29,7 +29,7 @@ const Card = ({ searchName }) => {
   <AnimatedDiv
     initial={{ opacity: 0, y: 5 }}
     animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6 }}
+    transition={{ duration: 0.8 }}
   >
     <CardContainer>
       <h3>{card.name}</h3>

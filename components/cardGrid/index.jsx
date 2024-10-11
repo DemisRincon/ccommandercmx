@@ -23,7 +23,7 @@ const CardGrid = ({ cardList, paragraphs, title }) => {
       <AnimatedDiv
         initial={{ opacity: 0, y: 5 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.8 }}
       >
         {title && <H2>{title}</H2>}
         {cardsComponents}

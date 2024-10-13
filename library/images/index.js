@@ -8,6 +8,9 @@ import Ken from "./ken.png";
 import Lua from "./lua.png";
 import Higher from "./higher.png";
 import ComedIan from "./comedian.png";
+import WOTCLogo from "./wotcLogo.png";
+import Teen from "./teen.png";
+import Hasbro from "./hasbro.png";
 
 export {
   Logo,
@@ -20,4 +23,7 @@ export {
   Lua,
   Higher,
   ComedIan,
+  WOTCLogo,
+  Teen,
+  Hasbro,
 };

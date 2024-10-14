@@ -3,6 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 import StyledComponentsRegistry from "./registry";
 
 const Html = styled.html`
@@ -40,6 +41,7 @@ const Layout = ({ children }) => {
           <Header />
           {children}
         </MainLayout>
+        <Footer />
       </StyledComponentsRegistry>
     </Html>
   );

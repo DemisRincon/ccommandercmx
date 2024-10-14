@@ -1,4 +1,4 @@
-import { Hasbro, Teen, WOTCLogo } from '@/library/images';
+import { BVLogo, Salty } from '@/library/images';
 import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
@@ -6,11 +6,11 @@ import styled from 'styled-components';
 const FooterWrapper = styled.footer`
   background-color: #000;
   color: #fff;
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-width: 100%;
 `;
 
 const SectionContainer = styled.div`
@@ -24,36 +24,48 @@ const SectionContainer = styled.div`
     flex-direction: row; 
     justify-content: space-evenly;
     align-items: flex-start;
-    flex-wrap: wrap;
+  }
+`;
+
+
+const SectionSplit = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+  @media (min-width: 768px) {
+    flex-direction: column; 
+    width: 50%; 
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    width: 100%; 
+    gap: 2rem; 
   }
 `;
 
 const Section = styled.div`
   min-width: 5rem;
-  padding: .5rem;
-  text-align: center; 
+  margin: .5rem;
 
-  @media (min-width: 768px) {
-    text-align: left; 
-  }
 `;
-
 const SectionTitle = styled.h3`
   font-size: 1.2rem;
   color: #fff;
   margin-bottom: 10px;
-  border-bottom: 2px solid orange;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  @media (min-width: 1024px) {
+    justify-content: flex-start; 
+  }
 `;
 
 const InputWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @media (min-width: 768px) {
-    flex-direction: row;  
-    align-items: center;
+  justify-content: center;
+  @media (min-width: 1024px) {
+    justify-content: flex-start;
   }
 `;
 
@@ -62,10 +74,10 @@ const Input = styled.input`
   border: none;
   border-radius: 5%;
   margin-bottom: 10px; 
+  margin-right: 10px; 
 
   @media (min-width: 768px) {
     margin-bottom: 0;
-    margin-right: 10px; 
   }
 `;
 
@@ -82,7 +94,7 @@ const SocialIcons = styled.div`
   gap: 10px;
   justify-content: center; 
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     justify-content: flex-start; 
   }
 `;
@@ -105,7 +117,7 @@ const LinkList = styled.ul`
   text-align: center; 
 
   @media (min-width: 768px) {
-    text-align: left; 
+    text-align: center; 
   }
 `;
 
@@ -118,6 +130,12 @@ const FooterLink = styled.a`
   &:hover {
     text-decoration: underline;
   }
+  @media (min-width: 768px) {
+    text-align: center; 
+  }
+  @media (min-width: 1024px) {
+    text-align: left; 
+  }
 `;
 
 const Logos = styled.div`
@@ -128,14 +146,15 @@ const Logos = styled.div`
 
 const LogoImage = styled(Image)`
   margin: 1rem;
-  height: 4rem;
-  width: 4rem;
+  height: 5rem;
+  width: 5rem;
 `;
 
 const Footer = () => {
   return (
     <FooterWrapper>
       <SectionContainer>
+        <SectionSplit>
         <Section>
           <SectionTitle>Find a Store</SectionTitle>
           <InputWrapper>
@@ -175,7 +194,8 @@ const Footer = () => {
             <FooterLink href="#">Disclosure</FooterLink>
           </LinkList>
         </Section>
-
+        </SectionSplit>
+        <SectionSplit>
         <Section>
           <SectionTitle>Magic</SectionTitle>
           <LinkList>
@@ -196,12 +216,12 @@ const Footer = () => {
             <FooterLink href="#">Magic: The Gathering</FooterLink>
           </LinkList>
         </Section>
+        </SectionSplit>
       </SectionContainer>
 
       <Logos>
-        <LogoImage src={WOTCLogo} alt="Wizards of the Coast" />
-        <LogoImage src={Hasbro} alt="Hasbro" />
-        <LogoImage src={Teen} alt="ESRB" />
+        <LogoImage src={BVLogo} alt="Banshee's Veil" />
+        <LogoImage src={Salty} alt="La Escupidera de Salty" />
       </Logos>
     </FooterWrapper>
   );

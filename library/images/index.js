@@ -11,6 +11,8 @@ import ComedIan from "./comedian.png";
 import WOTCLogo from "./wotcLogo.png";
 import Teen from "./teen.png";
 import Hasbro from "./hasbro.png";
+import BVLogo from "./BVLogo.png";
+import Salty from "./Salty.png";
 
 export {
   Logo,
@@ -26,4 +28,6 @@ export {
   WOTCLogo,
   Teen,
   Hasbro,
+  BVLogo,
+  Salty,
 };

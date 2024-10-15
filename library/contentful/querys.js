@@ -10,6 +10,17 @@ export const slugQuery = `
   }
 `;
 
+export const footherQuery = `
+ query {
+   footherCollection{
+    	items{
+   			slug,
+        content
+      }
+  	}
+  }
+`;
+
 export const findBySlugQuery = (slug) => `
   query {
     pageCollection(where: { slug:"${slug}" },  limit: 1){

@@ -1,7 +1,10 @@
-import { BVLogo, Salty } from '@/library/images';
+import { Logo } from '@/library/images';
 import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
+import { FaSearch, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaXTwitter  } from 'react-icons/fa6';
+import AnimatedDiv from '../animatedDiv';
 
 const FooterWrapper = styled.footer`
   background-color: #000;
@@ -40,6 +43,7 @@ const SectionSplit = styled.div`
 
   @media (min-width: 1024px) {
     flex-direction: row;
+    justify-content: space-evenly;
     width: 100%; 
     gap: 2rem; 
   }
@@ -48,7 +52,6 @@ const SectionSplit = styled.div`
 const Section = styled.div`
   min-width: 5rem;
   margin: .5rem;
-
 `;
 const SectionTitle = styled.h3`
   font-size: 1.2rem;
@@ -62,38 +65,48 @@ const SectionTitle = styled.h3`
 `;
 
 const InputWrapper = styled.div`
+  width: 60%;
+  margin-left: 20%;
+  border-radius: 5rem;
+  border: 2px solid #d1d1d1;
+  background-color: white;
   display: flex;
   justify-content: center;
+  align-items: center;
+  @media (min-width: 768px) {
+    width: 80%;
+    margin-left: 10%;
+  }
   @media (min-width: 1024px) {
-    justify-content: flex-start;
+    width: 100%;
+    margin-left: 0%;
   }
 `;
 
 const Input = styled.input`
-  padding: 10px;
-  border: none;
-  border-radius: 5%;
-  margin-bottom: 10px; 
-  margin-right: 10px; 
-
-  @media (min-width: 768px) {
-    margin-bottom: 0;
+  width: 85%;
+  padding: .5rem 0 .5rem .2rem;
+  border-radius: 5rem 0 0 5rem;
+  font-size: 1rem;
+  outline: none;
+  border: 2px solid #d1d1d1;
+  &:focus {
+    border-color: #888888;
   }
 `;
 
-const SearchButton = styled.button`
-  padding: .5rem;
-  background-color: #fff;
-  border: none;
-  border-radius: 5%;
-  cursor: pointer;
+const SearchIcon = styled(FaSearch)`
+  color: #aaa;
+  font-size: 1.2rem;
+  width: 15%;
 `;
+
 
 const SocialIcons = styled.div`
   display: flex;
-  gap: 10px;
+  padding-top: 1rem;
+  gap: 1rem;
   justify-content: center; 
-
   @media (min-width: 1024px) {
     justify-content: flex-start; 
   }
@@ -102,7 +115,6 @@ const SocialIcons = styled.div`
 const SocialIcon = styled.div`
   width: 2rem;
   height: 2rem;
-  background-color: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -152,78 +164,68 @@ const LogoImage = styled(Image)`
 
 const Footer = () => {
   return (
-    <FooterWrapper>
-      <SectionContainer>
-        <SectionSplit>
-        <Section>
-          <SectionTitle>Find a Store</SectionTitle>
-          <InputWrapper>
-            <Input type="text" placeholder="Enter your city or postal code" />
-            <SearchButton>🔍</SearchButton>
-          </InputWrapper>
+    <AnimatedDiv 
+    initial={{ opacity: 0, y: 5 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    >
+      <FooterWrapper>
+        <SectionContainer>
+          <SectionSplit>
+          <Section>
+            <SectionTitle>Buscar</SectionTitle>
+            <InputWrapper>
+            <Input type="text" placeholder="Buscar" />
+            <SearchIcon />
+            </InputWrapper>
+          </Section>
 
-          <SectionTitle>Social</SectionTitle>
-          <SocialIcons>
-            <SocialIcon>🌐</SocialIcon>
-            <SocialIcon>🌐</SocialIcon>
-            <SocialIcon>🌐</SocialIcon>
-            <SocialIcon>🌐</SocialIcon>
-          </SocialIcons>
-        </Section>
+          <Section>
+            <SectionTitle>Home</SectionTitle>
+            <LinkList>
+              <FooterLink href="#">Bienvenido</FooterLink>
+            </LinkList>
+          </Section>
 
-        <Section>
-          <SectionTitle>Find</SectionTitle>
-          <LinkList>
-            <FooterLink href="#">Articles</FooterLink>
-            <FooterLink href="#">Club Support</FooterLink>
-            <FooterLink href="#">Digital Books</FooterLink>
-            <FooterLink href="#">Formats</FooterLink>
-            <FooterLink href="#">Rules</FooterLink>
-            <FooterLink href="#">Military Support</FooterLink>
-          </LinkList>
-        </Section>
+          <Section>
+            <SectionTitle>Formatos</SectionTitle>
+            <LinkList>
+              <FooterLink href="#">LKS</FooterLink>
+              <FooterLink href="#">cEDH</FooterLink>
+            </LinkList>
+          </Section>
+          </SectionSplit>
+          <SectionSplit>
+          <Section>
+            <SectionTitle>Origen</SectionTitle>
+            <LinkList>
+              <FooterLink href="#">Conócenos</FooterLink>
+              <FooterLink href="#">Propuesta</FooterLink>
+            </LinkList>
+          </Section>
 
-        <Section>
-          <SectionTitle>Company</SectionTitle>
-          <LinkList>
-            <FooterLink href="#">About</FooterLink>
-            <FooterLink href="#">Accounts</FooterLink>
-            <FooterLink href="#">Careers</FooterLink>
-            <FooterLink href="#">Support</FooterLink>
-            <FooterLink href="#">Affiliate Program</FooterLink>
-            <FooterLink href="#">Disclosure</FooterLink>
-          </LinkList>
-        </Section>
-        </SectionSplit>
-        <SectionSplit>
-        <Section>
-          <SectionTitle>Magic</SectionTitle>
-          <LinkList>
-            <FooterLink href="#">Magic: The Gathering</FooterLink>
-            <FooterLink href="#">Magic Arena</FooterLink>
-            <FooterLink href="#">Magic.gg</FooterLink>
-            <FooterLink href="#">Store & Events Locator</FooterLink>
-            <FooterLink href="#">Card Database</FooterLink>
-            <FooterLink href="#">Secret Lair</FooterLink>
-          </LinkList>
-        </Section>
+          <Section>
+            <SectionTitle>Info</SectionTitle>
+            <LinkList>
+              <FooterLink href="#">FAQ</FooterLink>
+            </LinkList>
+          </Section>
+            <Section>
+              <SectionTitle>Social</SectionTitle>
+              <SocialIcons>
+                <SocialIcon><FaFacebook size={'90%'} /></SocialIcon>
+                <SocialIcon><FaInstagram size={'100%'}/></SocialIcon>
+                <SocialIcon><FaXTwitter size={'100%'}/></SocialIcon>
+              </SocialIcons>
+            </Section>
+          </SectionSplit>
+        </SectionContainer>
 
-        <Section>
-          <SectionTitle>Brands</SectionTitle>
-          <LinkList>
-            <FooterLink href="#">Dungeons & Dragons</FooterLink>
-            <FooterLink href="#">Duel Masters</FooterLink>
-            <FooterLink href="#">Magic: The Gathering</FooterLink>
-          </LinkList>
-        </Section>
-        </SectionSplit>
-      </SectionContainer>
-
-      <Logos>
-        <LogoImage src={BVLogo} alt="Banshee's Veil" />
-        <LogoImage src={Salty} alt="La Escupidera de Salty" />
-      </Logos>
-    </FooterWrapper>
+        <Logos>
+          <LogoImage src={Logo} alt="Banshee's Veil" />
+        </Logos>
+      </FooterWrapper>
+    </AnimatedDiv>
   );
 };
 

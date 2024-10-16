@@ -13,6 +13,7 @@ const useGetFooter = () => {
             params: {
               slug: item.slug,
               content: item.content,
+              bottomImage: item.bottomImage.url
             },
           };
         })

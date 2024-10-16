@@ -15,7 +15,10 @@ export const footerQuery = `
    footherCollection{
     	items{
    			slug,
-        content
+        content,
+        bottomImage{
+          url
+        }
       }
   	}
   }

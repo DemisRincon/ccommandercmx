@@ -217,9 +217,19 @@ const Footer = () => {
           <Section>
             <SectionTitle>Social</SectionTitle>
             <SocialIcons>
-              <SocialIcon><FaFacebook size={'90%'} /></SocialIcon>
-              <SocialIcon><FaInstagram size={'100%'}/></SocialIcon>
-              <SocialIcon><FaXTwitter size={'100%'}/></SocialIcon>
+              <SocialIcon>
+                <a href="https://www.facebook.com/share/hrXPPuKBt1SoU5f1/" target="_blank" rel="noopener noreferrer" >
+                  <FaFacebook color={'white'} size={'100%'} />
+                </a>
+              </SocialIcon>
+              <SocialIcon>
+                <a href="https://www.instagram.com/ccommandercmx?igsh=NDEwZTZqOGMxc3Q4" target="_blank" rel="noopener noreferrer" >
+                  <FaInstagram color={'white'} size={'100%'}/>
+                </a>
+              </SocialIcon>
+              <SocialIcon>
+                  <FaXTwitter color={'white'} size={'100%'}/>
+              </SocialIcon>
             </SocialIcons>
           </Section>
         </SectionContainer>

@@ -115,10 +115,12 @@ const SocialIcons = styled.div`
 
   gap: 1rem;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   flex-direction: column;
   @media (min-width: 1024px) {
     justify-content: start;
+    align-items: start;
+    flex-direction: row;
   }
 `;
 

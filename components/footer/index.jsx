@@ -5,9 +5,10 @@ import styled from 'styled-components';
 import { FaSearch, FaFacebook, FaInstagram } from 'react-icons/fa';
 import { FaXTwitter  } from 'react-icons/fa6';
 import AnimatedDiv from '../animatedDiv';
+import useGetFooter from '@/library/hooks/useGetFooter';
 
 const FooterWrapper = styled.footer`
-  background-color: #000;
+  background-color: #282d46;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -24,9 +25,18 @@ const SectionContainer = styled.div`
   gap: 1.5rem;
 
   @media (min-width: 768px) {
-    flex-direction: row; 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem; 
+    justify-content: center;
+    align-items: center;
+  }
+  @media (min-width: 1024px) {
+    display: flex;
+    grid-template-columns: none;
     justify-content: space-evenly;
     align-items: flex-start;
+    flex-direction: row;
   }
 `;
 
@@ -65,17 +75,16 @@ const SectionTitle = styled.h3`
 `;
 
 const InputWrapper = styled.div`
-  width: 60%;
-  margin-left: 20%;
+  width: 100%;
   border-radius: 5rem;
-  border: 2px solid #d1d1d1;
+  border: 1px solid #000000;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   @media (min-width: 768px) {
-    width: 80%;
-    margin-left: 10%;
+    width: 60%;
+    margin-left: 20%;
   }
   @media (min-width: 1024px) {
     width: 100%;
@@ -85,11 +94,14 @@ const InputWrapper = styled.div`
 
 const Input = styled.input`
   width: 85%;
-  padding: .5rem 0 .5rem .2rem;
   border-radius: 5rem 0 0 5rem;
+  padding: .5rem 0 .3rem 1rem;
   font-size: 1rem;
   outline: none;
-  border: 2px solid #d1d1d1;
+  border: 0 1px 0 0;
+  border-color: #d1d1d1;
+  border-width: 1px;
+  border-style: solid;
   &:focus {
     border-color: #888888;
   }
@@ -163,6 +175,29 @@ const LogoImage = styled(Image)`
 `;
 
 const Footer = () => {
+  const footer = useGetFooter();
+  if (!footer.length) return null;
+  const footerDetails = footer[0].params.content.data.sections;
+  console.log(footerDetails);
+  console.log('footer  details');
+  
+  const contentList = (data) => {
+    return (
+      <LinkList>
+        {data.map((data, index) => (
+          <FooterLink href={data.url} key={index}>{data.title}</FooterLink>
+        ))}
+      </LinkList>
+    )
+  }
+  
+  const footerItems = footerDetails.map((item, index) => (  
+    <Section key={index}>
+      <SectionTitle>{item.title}</SectionTitle>
+      {contentList(item.list)}
+    </Section>
+  ));
+
   return (
     <AnimatedDiv 
     initial={{ opacity: 0, y: 5 }}
@@ -171,54 +206,22 @@ const Footer = () => {
     >
       <FooterWrapper>
         <SectionContainer>
-          <SectionSplit>
           <Section>
-            <SectionTitle>Buscar</SectionTitle>
+            <SectionTitle/>
             <InputWrapper>
-            <Input type="text" placeholder="Buscar" />
-            <SearchIcon />
+              <Input type="text" placeholder="Buscar" />
+              <SearchIcon />
             </InputWrapper>
           </Section>
-
+          {footerItems}
           <Section>
-            <SectionTitle>Home</SectionTitle>
-            <LinkList>
-              <FooterLink href="#">Bienvenido</FooterLink>
-            </LinkList>
+            <SectionTitle>Social</SectionTitle>
+            <SocialIcons>
+              <SocialIcon><FaFacebook size={'90%'} /></SocialIcon>
+              <SocialIcon><FaInstagram size={'100%'}/></SocialIcon>
+              <SocialIcon><FaXTwitter size={'100%'}/></SocialIcon>
+            </SocialIcons>
           </Section>
-
-          <Section>
-            <SectionTitle>Formatos</SectionTitle>
-            <LinkList>
-              <FooterLink href="#">LKS</FooterLink>
-              <FooterLink href="#">cEDH</FooterLink>
-            </LinkList>
-          </Section>
-          </SectionSplit>
-          <SectionSplit>
-          <Section>
-            <SectionTitle>Origen</SectionTitle>
-            <LinkList>
-              <FooterLink href="#">Conócenos</FooterLink>
-              <FooterLink href="#">Propuesta</FooterLink>
-            </LinkList>
-          </Section>
-
-          <Section>
-            <SectionTitle>Info</SectionTitle>
-            <LinkList>
-              <FooterLink href="#">FAQ</FooterLink>
-            </LinkList>
-          </Section>
-            <Section>
-              <SectionTitle>Social</SectionTitle>
-              <SocialIcons>
-                <SocialIcon><FaFacebook size={'90%'} /></SocialIcon>
-                <SocialIcon><FaInstagram size={'100%'}/></SocialIcon>
-                <SocialIcon><FaXTwitter size={'100%'}/></SocialIcon>
-              </SocialIcons>
-            </Section>
-          </SectionSplit>
         </SectionContainer>
 
         <Logos>

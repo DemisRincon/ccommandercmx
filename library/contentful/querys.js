@@ -10,7 +10,7 @@ export const slugQuery = `
   }
 `;
 
-export const footherQuery = `
+export const footerQuery = `
  query {
    footherCollection{
     	items{

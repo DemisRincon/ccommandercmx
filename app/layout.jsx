@@ -40,8 +40,8 @@ const Layout = ({ children }) => {
         <MainLayout>
           <Header />
           {children}
+          <Footer />
         </MainLayout>
-        <Footer />
       </StyledComponentsRegistry>
     </Html>
   );

@@ -178,8 +178,6 @@ const Footer = () => {
   const footer = useGetFooter();
   if (!footer.length) return null;
   const footerDetails = footer[0].params.content.data.sections;
-  console.log(footerDetails);
-  console.log('footer  details');
   
   const contentList = (data) => {
     return (
